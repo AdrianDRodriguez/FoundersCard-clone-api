@@ -11,4 +11,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  get "/members" => "members#index"
+  get "/members/:id" => "members#show"
+  post "/members" => "members#create"
+  patch "/members/:id" => "members#update"
+  delete "/members/:id" => "members#destroy"
 end
