@@ -1,7 +1,7 @@
 class MembershipsController < ApplicationController
   def index
     @memberships = Membership.all
-    render template: "memberships/index"
+    render :index
   end
 
   def show
