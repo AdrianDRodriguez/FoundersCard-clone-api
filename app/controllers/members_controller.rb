@@ -4,11 +4,6 @@ class MembersController < ApplicationController
     render :index
   end
 
-  def show
-    @member = Member.find_by(id: params[:id])
-    render :show
-  end
-
   def create
     @member = Member.new(
       name: params[:name],
@@ -16,9 +11,13 @@ class MembersController < ApplicationController
       password_digest: params[:password_digest],
       membership: params[:membership]
     )
-    @member.save
-    render :show
+    if member.save
+      render json: { message: "User created successfully" }, status: :created
+    else
+      render json: { errors: user.errors.full_messages }, status: :bad_request
+    end
   end
+
 
   def update
     @member = Member.find_by(id: params[:id])
@@ -28,6 +27,7 @@ class MembersController < ApplicationController
       password_digest: params[:password_digest] || @member.password_digest,
       membership: params[:membership] || @member.membership,
     )
+    @member.save
     render :show
   end
 

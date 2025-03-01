@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   get "/members" => "members#index"
-  get "/members/:id" => "members#show"
   post "/members" => "members#create"
   patch "/members/:id" => "members#update"
   delete "/members/:id" => "members#destroy"
@@ -23,4 +22,9 @@ Rails.application.routes.draw do
   post "/memberships" => "memberships#create"
   patch "/memberships/:id" => "memberships#update"
   delete "/memberships/:id" => "memberships#destroy"
+
+  get "/users" => "users#index"
+  post "/users" => "users#create"
+
+  post "/sessions" => "sessions#create"
 end
