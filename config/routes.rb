@@ -17,4 +17,10 @@ Rails.application.routes.draw do
   post "/members" => "members#create"
   patch "/members/:id" => "members#update"
   delete "/members/:id" => "members#destroy"
+
+  get "/memberships" => "memberships#index"
+  get "/memberships/:id" => "memberships#show"
+  post "/memberships" => "memberships#create"
+  patch "/memberships/:id" => "memberships#update"
+  delete "/memberships/:id" => "memberships#destroy"
 end
