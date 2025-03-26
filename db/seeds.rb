@@ -7,3 +7,6 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+membership = Membership.new(membership_name: "Gold", price: 250, benefits: "VIP Travel Privileges, FOUNDERSCARD Elite Hotel Collection,Exclusive Discounts on technology, cars, concerts")
+membership.save
